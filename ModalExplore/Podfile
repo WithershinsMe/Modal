@@ -1,0 +1,40 @@
+# Uncomment the next line to define a global platform for your project
+
+workspace 'ModalExplore'
+
+platform :ios, '9.0'
+$SpecPath = ''
+
+
+target 'ModalExplore' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+  project 'ModalExplore/ModalExplore'
+
+###该方法实现 framework和source的切换 目前仅支持所有组件统一切换
+### @pname="#{@pname}/Source" 此方法实现源码引入
+### @pname="#{@pname}" 此方法实现framework引入
+  
+def podspecName(name="")
+  @pname=name
+  @pname="#{@pname}"
+  return @pname
+end
+  # Pods for ModalExplore
+#pod podspecName("GHModalStatus"), :path => '../GHModalStatus'
+pod 'SDWebImage', '~> 4.0'
+  target 'ModalExploreTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ModalExploreUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+target 'GHModalStatus' do
+   project ‘GHModalStatus/GHModalStatus'
+end
+

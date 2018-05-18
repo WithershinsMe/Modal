@@ -1,0 +1,14 @@
+# Uncomment the next line to define a global platform for your project
+
+workspace 'GHModalStatus'
+platform :ios, '9.0'
+inhibit_all_warnings!
+
+pod 'SDWebImage', '~> 4.0'
+pod 'AFNetworking', '~> 3.0'
+
+target 'GHModalStatus' do
+  project ‘GHModalStatus/GHModalStatus'
+
+end
+

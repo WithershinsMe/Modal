@@ -1,0 +1,11 @@
+framework module GHModalStatus {
+  umbrella header "GHModalStatus.h"
+
+  export *
+  module * { export * }
+}
+
+module GHModalStatus.Swift {
+    header "GHModalStatus-Swift.h"
+    requires objc
+}
